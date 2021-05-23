@@ -2,6 +2,7 @@
 # este proyecto se me ocurrio gracias a un video de Pelado Nerd
 # este sofware travaja bajo la GNU GENERAL PUBLIC LICENSE version 3
 
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 # creado por: JuanPerdomo00 >:)
 
