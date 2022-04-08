@@ -74,7 +74,7 @@ def saludar_usuario():
 
 # Simula una carga
 def load():
-    print(f"\n{Color.rojo}[+] {Color.verde}Buscando...\n")
+    print(f"\n{Color.rojo}[+] {Color.verde}Buscando...\n{Color.reset}")
     print(f"[###                  ] {Color.naranja}5%{Color.reset}")
     tm.sleep(2)
     print(f"[#########            ] {Color.naranja}25%{Color.reset}")
