@@ -1,4 +1,5 @@
-# x
+# gitgnore
+.gitignore
 env
 comand.md
 src/__pycache__
