@@ -1,21 +1,35 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+#
 # proyecto preguntar comando de linux y mostrar su utilidad
 # este proyecto se me ocurrio gracias a un video de Pelado Nerd
-# este sofware travaja bajo la GNU GENERAL PUBLIC LICENSE version 3
-
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-# creado por: JuanPerdomo00 >:)
+# este sofware trabaja bajo la GNU GENERAL PUBLIC LICENSE version 3
+#
+# Creador: Jakepy Perdomo <j4kyjak3@protonmail.com>
+# Título: Linux Command
+# FechaCreación: mayo-14-2021
+#
+# Código simple de un crud en python. Versión 1.1
+# Copyright (c) 2022 Jakepy Perdomo <j4kyjak3@protonmail.com>. Comentarios bienvenidos.
+#
+# Permiso otorgado para uso y distribución no comercial siempre que
+# este aviso de derechos de autor permanece intacto.
+#
+# Hay ejemplos de cómo usar este código en el README.md.
+#
+# Cual quier duda escribeme, o talvez este dormido jsjs.
 
 # modulos
 import time as tm 
 import os
 import platform
+import comandos
 import comandos.comando as cm
 from colorama import Fore
 from pyfiglet import Figlet
 
 # version
-__version__ = 1.0
+__version__ = 1.1
 
 
 class Color:
@@ -40,6 +54,8 @@ def clearPant():
         os.system("cls")
     elif sys == "Linux":
         os.system("clear")
+    else:
+        pass
 
 
 # fuente de letra para letreros
@@ -49,8 +65,8 @@ f = Figlet(font="3-d")
 # muestra letrero al usuario
 def figlet():
         clearPant()
-        print(f"{Color.verde}{Color.negrita}",  f.renderText("Linux Command"),"\t\r")
-        print(f"\t\t\t\t\t\t{Color.cyan} {Color.negrita}-+- By: JuanPerdomo00 >:) -+- {Color.reset}")
+        print(f"{Color.verde}{Color.negrita}",  f.renderText("Linux Command"),"\t\t")
+        print(f"\t\t\t\t\t{Color.cyan} {Color.negrita}-+- By: JuanPerdomo00 <jakepy> -+- {Color.reset}")
 
 
 # mostrara por pantalla el saludo y la version
@@ -75,15 +91,15 @@ def saludar_usuario():
 # Simula una carga
 def load():
     print(f"\n{Color.rojo}[+] {Color.verde}Buscando...\n{Color.reset}")
-    print(f"[###                  ] {Color.naranja}5%{Color.reset}")
-    tm.sleep(2)
-    print(f"[#########            ] {Color.naranja}25%{Color.reset}")
-    tm.sleep(2)
-    print(f"[#############        ] {Color.naranja}50%{Color.reset}")
-    tm.sleep(2)
-    print(f"[#################    ] {Color.naranja}75%{Color.reset}")
-    tm.sleep(2)
-    print(f"[#####################] {Color.naranja}100%{Color.reset}")
+    print(f"[{Color.azul}###                  {Color.reset}] {Color.naranja}5%{Color.reset}")
+    tm.sleep(1)
+    print(f"[{Color.amarillo}#########            {Color.reset}] {Color.naranja}25%{Color.reset}")
+    tm.sleep(1)
+    print(f"[{Color.cyan}#############        {Color.reset}] {Color.naranja}50%{Color.reset}")
+    tm.sleep(1)
+    print(f"[{Color.magenta}#################    {Color.reset}] {Color.naranja}75%{Color.reset}")
+    tm.sleep(1)
+    print(f"[{Color.rojo}#####################{Color.reset}]{Color.naranja}100%{Color.reset}")
     tm.sleep(1)
 
 
@@ -99,44 +115,56 @@ def pedir_comandos():
     +------------------------------------------------------+                                                            
     {Color.reset}""")
 
+    try:
+    ###############################################################
+        opcion = str(input(f"{Color.magenta}[{Color.amarillo}?{Color.magenta}] {Color.verde}Que comando desea buscar: {Color.reset}"))
+        clearPant()
+        figlet()
+        load()
+        clearPant()
+        figlet()
+        comandos(opcion)
+    ###############################################################
+    except KeyboardInterrupt:
+        clearPant()
+        figlet()
+        print(f"\n{Color.rojo}Salio de manera forzosa...\n{Color.reset}")
+        exit(1)
 
-    ###############################################################
-    opcion = input("[?] Que comando desea buscar: ")
-    clearPant()
-    figlet()
-    load()
-    clearPant()
-    figlet()
-    comandos(opcion)
-    ###############################################################
 
 def error():
     clearPant()
     figlet()
     print(f"\n{Color.rojo} [!] la opcion que usted escogio no es valida")
     print(f"{Color.rojo} [!] ERROR...")
-    print(f"{Color.rojo} [!] Ejecute el programa nuevamente{Color.reset}\n")
-    os.system("exit")
+    print(f"{Color.rojo} [!] Ingrese otra opcion o salga del programa :){Color.reset}\n")
+
 
 
 # Si el usuario quere buscar otro comando el prgrama volvera a ejecutarse
 # En caso de que diga que no se agradesera al ususario y se cerrara
 # Y si no menciona ninguna de las anteriores pues es error
 def otroCommad():
-    print(f"{Color.naranja}{Color.negrita}[?] Quiere buscar otro comando")
-    o = input("[!] si[s] o no[n]: ")
-    if o == "s" or o == "si":
+    try:
+        print(f"\n{Color.naranja}{Color.negrita}[?] Quiere buscar otro comando?\n")
+        o = str(input(f"[!] {Color.negrita}si[s] o {Color.negrita}no[n]: {Color.reset}"))
+        if o == "s" or o == "si" and o != "":
+            clearPant()
+            figlet()
+            pedir_comandos()
+        elif o == "n" or o == "no" and o != "":
+            clearPant()
+            figlet()
+            print(f"\n{Color.blanco}{Color.amarillo}[*] {Color.verde}Gracias por usar Linux Command {Color.cyan}:)\n{Color.reset}")
+            exit(0)
+        else:
+            error()
+            otroCommad()
+    except KeyboardInterrupt:
         clearPant()
         figlet()
-        pedir_comandos()
-    elif o == "n" or o == "no":
-        clearPant()
-        figlet()
-        print(f"{Color.blanco}[*]Gracias por usar Linux Command :)\n{Color.reset}")
-        os.system("exit")
-    else:
-        error()
-
+        print(f"{Color.rojo}[!!] Salio forzado...{Color.reset}\n")
+        exit(1)
 
 
 def comandos(opcion):
@@ -222,6 +250,7 @@ def comandos(opcion):
         
         else:
             error()
+            otroCommad()
 
 
 # Funcion principal
