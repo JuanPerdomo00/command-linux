@@ -9,9 +9,9 @@
 # Título: Linux Command
 # FechaCreación: mayo-14-2021
 #
-# Código simple de un crud en python. Versión 1.1
-# Copyright (c) 2022 Jakepy Perdomo <j4kyjak3@protonmail.com>. Comentarios bienvenidos.
-#
+# Copyright (c) 2022 Jakepy Perdomo <j4kyjak3@protonmail.com>.
+# 
+# Comentarios bienvenidos.
 # Permiso otorgado para uso y distribución no comercial siempre que
 # este aviso de derechos de autor permanece intacto.
 #
