@@ -192,3 +192,191 @@ top = f"""
     el comando top mostrará una lista de los procesos en ejecución y la cantidad de CPU que utiliza cada proceso.
     Es muy útil monitorear el uso de los recursos del sistema, especialmente para saber qué proceso debe terminarse porque consume demasiados recursos.{Color.reset}
 """
+
+# 21
+history = f"""
+    {Color.azul}[*] {Color.rojo}history: {Color.blanco}El comando history muestra una lista de comandos que has ejecutado anteriormente en la terminal.
+    Esto puede ser útil para recordar comandos anteriores o para repetir comandos sin tener que escribirlos nuevamente.
+
+    Ejemplo:
+    {Color.verde}$ history
+    1  ls
+    2  cd Documentos
+    3  touch archivo.txt
+    4  nano archivo.txt
+    5  gcc programa.c
+    6  ./a.out
+    7  history{Color.reset}
+"""
+
+# 22
+man = f"""
+    {Color.azul}[*] {Color.rojo}man: {Color.blanco}El comando man, que significa "manual", te proporciona documentación detallada sobre otros comandos de Linux.
+    Por ejemplo, si escribes man ls, obtendrás información completa sobre cómo usar el comando ls, incluyendo sus opciones y ejemplos de uso.
+
+    Ejemplo:
+    {Color.verde}$ man ls{Color.reset}
+"""
+
+# 23
+df = f"""
+    {Color.azul}[*] {Color.rojo}df: {Color.blanco}El comando df, que significa "disk free", muestra información sobre el espacio en disco disponible en tu sistema.
+    Esto incluye el espacio total, el espacio utilizado y el espacio disponible en cada una de las particiones de tu disco.
+
+    Ejemplo:
+    {Color.verde}$ df{Color.reset}
+"""
+
+# 24
+du = f"""
+    {Color.azul}[*] {Color.rojo}du: {Color.blanco}El comando du, que significa "disk usage", muestra el uso del espacio en disco por parte de los archivos y directorios en un directorio específico.
+    Puedes usar opciones como -h para mostrar tamaños de archivo legibles por humanos y -s para resumir el uso del espacio en disco de los directorios.
+
+    Ejemplo:
+    {Color.verde}$ du -h Directorio{Color.reset}
+"""
+
+# 25
+ps = f"""
+    {Color.azul}[*] {Color.rojo}ps: {Color.blanco}El comando ps muestra una lista de los procesos en ejecución en tu sistema.
+    Puedes usar opciones como -aux para mostrar todos los procesos en el sistema, incluyendo los de otros usuarios, y -u para mostrar más detalles sobre los procesos.
+
+    Ejemplo:
+    {Color.verde}$ ps -aux{Color.reset}
+"""
+
+# 26
+kill = f"""
+    {Color.azul}[*] {Color.rojo}kill: {Color.blanco}El comando kill se utiliza para detener un proceso en ejecución enviándole una señal.
+    Puedes especificar el ID del proceso o el nombre del proceso para detenerlo.
+    Por ejemplo, kill -9 PID detendrá el proceso con el ID especificado.
+
+    Ejemplo:
+    {Color.verde}$ kill -9 PID{Color.reset}
+"""
+
+# 27
+grep = f"""
+    {Color.azul}[*] {Color.rojo}grep: {Color.blanco}El comando grep se utiliza para buscar patrones de texto en archivos.
+    Puedes utilizar opciones como -i para ignorar mayúsculas y minúsculas, -v para invertir la búsqueda y -r para buscar recursivamente en directorios.
+
+    Ejemplo:
+    {Color.verde}$ grep "patrón" archivo.txt{Color.reset}
+"""
+
+# 28
+sed = f"""
+    {Color.azul}[*] {Color.rojo}sed: {Color.blanco}El comando sed, que significa "stream editor", se utiliza para realizar ediciones de texto en archivos.
+    Puedes utilizar expresiones regulares y comandos de sustitución para realizar cambios en el texto de forma eficiente.
+
+    Ejemplo:
+    {Color.verde}$ sed 's/palabra1/palabra2/g' archivo.txt{Color.reset}
+"""
+
+# 29
+awk = f"""
+    {Color.azul}[*] {Color.rojo}awk: {Color.blanco}El comando awk es un potente lenguaje de programación utilizado para procesar y analizar texto.
+    Puedes utilizar patrones y acciones para filtrar y manipular datos de texto de forma avanzada.
+
+    Ejemplo:
+    {Color.verde}$ awk '/patrón/ {{ print }}' archivo.txt{Color.reset}
+"""
+
+# 30
+find = f"""
+    {Color.azul}[*] {Color.rojo}find: {Color.blanco}El comando find se utiliza para buscar archivos y directorios en un sistema de archivos.
+    Puedes especificar varios criterios de búsqueda, como nombre, tipo, tamaño y fecha de modificación.
+
+    Ejemplo:
+    {Color.verde}$ find /ruta -name "patrón"{Color.reset}
+"""
+
+# 31
+sort = f"""
+    {Color.azul}[*] {Color.rojo}sort: {Color.blanco}El comando sort se utiliza para ordenar líneas de texto en archivos.
+    Puedes ordenar alfabéticamente, numéricamente y por otros criterios utilizando opciones como -r para orden inverso y -n para orden numérico.
+
+    Ejemplo:
+    {Color.verde}$ sort archivo.txt{Color.reset}
+"""
+
+# 32
+uniq = f"""
+    {Color.azul}[*] {Color.rojo}uniq: {Color.blanco}El comando uniq se utiliza para encontrar y eliminar líneas duplicadas en archivos de texto.
+    Puedes utilizar opciones como -c para contar ocurrencias y -d para mostrar solo líneas duplicadas.
+
+    Ejemplo:
+    {Color.verde}$ uniq -d archivo.txt{Color.reset}
+"""
+
+# 33
+wc = f"""
+    {Color.azul}[*] {Color.rojo}wc: {Color.blanco}El comando wc se utiliza para contar palabras, líneas y caracteres en archivos de texto.
+    Puedes utilizar opciones como -l para contar líneas, -w para contar palabras y -c para contar caracteres.
+
+    Ejemplo:
+    {Color.verde}$ wc -l archivo.txt{Color.reset}
+"""
+
+# 34
+tar = f"""
+    {Color.azul}[*] {Color.rojo}tar: {Color.blanco}El comando tar se utiliza para crear, manipular y descomprimir archivos tar.
+    Puedes utilizar opciones como -c para crear un archivo tar, -x para extraer un archivo tar y -z para comprimir un archivo tar con gzip.
+
+    Ejemplo:
+    {Color.verde}$ tar -czvf archivo.tar.gz directorio{Color.reset}
+"""
+
+# 35
+head = f"""
+    {Color.azul}[*] {Color.rojo}head: {Color.blanco}El comando head se utiliza para mostrar las primeras líneas de un archivo de texto.
+    Puedes utilizar opciones como -n para especificar el número de líneas a mostrar.
+
+    Ejemplo:
+    {Color.verde}$ head -n 10 archivo.txt{Color.reset}
+"""
+
+# 36
+tail = f"""
+    {Color.azul}[*] {Color.rojo}tail: {Color.blanco}El comando tail se utiliza para mostrar las últimas líneas de un archivo de texto.
+    Puedes utilizar opciones como -n para especificar el número de líneas a mostrar.
+
+    Ejemplo:
+    {Color.verde}$ tail -n 10 archivo.txt{Color.reset}
+"""
+
+# 37
+cut = f"""
+    {Color.azul}[*] {Color.rojo}cut: {Color.blanco}El comando cut se utiliza para extraer secciones de líneas de archivos de texto.
+    Puedes especificar campos delimitados por un separador y utilizar opciones como -f para seleccionar campos específicos.
+
+    Ejemplo:
+    {Color.verde}$ cut -d',' -f 1,3 archivo.csv{Color.reset}
+"""
+
+# 38
+paste = f"""
+    {Color.azul}[*] {Color.rojo}paste: {Color.blanco}El comando paste se utiliza para combinar líneas de varios archivos de texto.
+    Puedes utilizar opciones como -d para especificar un delimitador de salida.
+
+    Ejemplo:
+    {Color.verde}$ paste -d',' archivo1.txt archivo2.txt{Color.reset}
+"""
+
+# 39
+awk = f"""
+    {Color.azul}[*] {Color.rojo}awk: {Color.blanco}El comando awk es un potente lenguaje de programación utilizado para procesar y analizar texto.
+    Puedes utilizar patrones y acciones para filtrar y manipular datos de texto de forma avanzada.
+
+    Ejemplo:
+    {Color.verde}$ awk '/patrón/ {{ print }}' archivo.txt{Color.reset}
+"""
+
+# 40
+sed = f"""
+    {Color.azul}[*] {Color.rojo}sed: {Color.blanco}El comando sed, que significa "stream editor", se utiliza para realizar ediciones de texto en archivos.
+    Puedes utilizar expresiones regulares y comandos de sustitución para realizar cambios en el texto de forma eficiente.
+
+    Ejemplo:
+    {Color.verde}$ sed 's/palabra1/palabra2/g' archivo.txt{Color.reset}
+"""
